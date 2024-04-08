@@ -19,7 +19,7 @@ public class Electrodomestico extends  AparatoElectrico {
     
     public Electrodomestico(String numSerie){
        super(numSerie);
-       
+       //
        
        
     }
