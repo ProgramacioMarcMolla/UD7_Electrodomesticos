@@ -17,12 +17,12 @@ public abstract class Electrodomestico extends AparatoElectrico {
     protected String modelo;
     protected Color color;
     protected ConsumoEnergetico consumoEnerg;
-    private final float PRECIO_AÑADIDO_A = 100;
-    private final float PRECIO_AÑADIDO_B = 80;
-    private final float PRECIO_AÑADIDO_C = 60;
-    private final float PRECIO_AÑADIDO_D = 50;
-    private final float PRECIO_AÑADIDO_E = 30;
-    private final float PRECIO_AÑADIDO_F = 10;
+    private final float PRECIO_ANADIDO_A = 100;
+    private final float PRECIO_ANADIDO_B = 80;
+    private final float PRECIO_ANADIDO_C = 60;
+    private final float PRECIO_ANADIDO_D = 50;
+    private final float PRECIO_ANADIDO_E = 30;
+    private final float PRECIO_ANADIDO_F = 10;
     
     
     protected int peso;
@@ -65,17 +65,17 @@ public abstract class Electrodomestico extends AparatoElectrico {
     private float getIncrementoConsumoEnerg(ConsumoEnergetico consumoE){
         switch(consumoE){
             case A:
-                return PRECIO_AÑADIDO_A;
+                return PRECIO_ANADIDO_A;
             case B:
-                return PRECIO_AÑADIDO_B;    
+                return PRECIO_ANADIDO_B;    
             case C:
-                return PRECIO_AÑADIDO_C;
+                return PRECIO_ANADIDO_C;
             case D:
-                return PRECIO_AÑADIDO_D;
+                return PRECIO_ANADIDO_D;
             case E:
-                return PRECIO_AÑADIDO_E;    
+                return PRECIO_ANADIDO_E;    
             case F:
-                return PRECIO_AÑADIDO_F;
+                return PRECIO_ANADIDO_F;
             default:
                 return 0;
         }
