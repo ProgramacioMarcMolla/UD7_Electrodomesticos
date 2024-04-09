@@ -52,7 +52,7 @@ public abstract class Electrodomestico extends AparatoElectrico {
     
     @Override
     public String toString(){
-        return super.toString()+", Marca: "+this.marca+", Modelo:'"+this.modelo+"', Tipo Consumo: "+ this.consumoEnerg +", Color: " + this.color+", Precio Base: "+this.precioBase;
+        return super.toString()+", Marca: "+this.marca+", Modelo:'"+this.modelo+"', Tipo Consumo: "+ this.consumoEnerg +", Color: " + this.color+", Peso: "+this.peso+ ", Precio Base: "+this.precioBase;
     }
 
     protected enum Color {
@@ -63,7 +63,7 @@ public abstract class Electrodomestico extends AparatoElectrico {
         A, B, C, D, E, F
     }
     
-    public float obtenerPrecioVenta(){
+    public double obtenerPrecioVenta(){
         return this.precioBase + getIncrementoConsumoEnerg(this.consumoEnerg);
     }
     
