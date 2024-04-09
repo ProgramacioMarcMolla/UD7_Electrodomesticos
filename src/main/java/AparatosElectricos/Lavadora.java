@@ -22,7 +22,6 @@ public class Lavadora extends Electrodomestico{
     
     public Lavadora(String numSerie, String marca, String modelo){
         super(numSerie,  marca,  modelo);
-        this.estaEncendido = false;
         this.carga = CARGA_DEFAULT;
     }
     
