@@ -20,6 +20,20 @@ public abstract class AparatoElectrico {
         this.tieneCorrienteElectrica = false;
     }
     
+    @Override
+    public String toString(){
+        String corrienteString = "(Sin corriente eléctrica)";
+        if(this.tieneCorrienteElectrica){
+            corrienteString = "(Con corriente eléctrica)";
+        }
+        
+        String encendidoString = "Está encendido";
+        if(this.estaEncendida){
+            encendidoString = "No está encendido";
+        }
+        return "Núm.Serie: "+ this.numSerie+" "+corrienteString+", " + encendidoString;
+    }
+    
     
     
     

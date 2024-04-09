@@ -20,4 +20,9 @@ public class Computador extends Dispositivo {
         this.velocidadCPU  = velocidadCPU;
         this.tamanoDisco = tamanoDisco;
     }
+    
+    @Override
+    public String toString(){
+        return "[Computador] "+super.toString()+", RAM: "+this.memoriaRamDisponible+", Velocidad CPU: " + this.velocidadCPU+", Tamaño HD"+ this.tamanoDisco;
+    }
 }

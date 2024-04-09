@@ -16,4 +16,13 @@ public abstract class Dispositivo extends AparatoElectrico{
         this.estaConectadoInternet = false;
     }
     
+    @Override
+    public String toString(){
+        String conectadoInternetString = "No conectado a Internet";
+        if(this.estaConectadoInternet){
+            conectadoInternetString = "Conectado a Internet";
+        }
+        return super.toString()+", " + conectadoInternetString;
+    }
+    
 }

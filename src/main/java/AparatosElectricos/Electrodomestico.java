@@ -49,6 +49,11 @@ public abstract class Electrodomestico extends AparatoElectrico {
         this.precioBase = PRECIO_DEFAULT;
         this.peso = PESO_DEFAULT;
     }
+    
+    @Override
+    public String toString(){
+        return super.toString()+", Marca: "+this.marca+", Modelo:'"+this.modelo+"', Tipo Consumo: "+ this.consumoEnerg +", Color: " + this.color+", Precio Base: "+this.precioBase;
+    }
 
     protected enum Color {
         BLANCO, NEGRO, ROJO, AZUL, GRIS
@@ -80,6 +85,8 @@ public abstract class Electrodomestico extends AparatoElectrico {
                 return 0;
         }
     }
+    
+    
     
 
 }
