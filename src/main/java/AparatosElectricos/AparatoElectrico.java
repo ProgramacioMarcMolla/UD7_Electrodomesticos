@@ -4,11 +4,13 @@
  */
 package AparatosElectricos;
 
+import Interfaces.Enchufable;
+
 /**
  *
  * @author mark
  */
-public abstract class AparatoElectrico {
+public abstract class AparatoElectrico implements Enchufable{
     
     protected String numSerie;
     protected boolean estaEncendida;
@@ -32,6 +34,16 @@ public abstract class AparatoElectrico {
             encendidoString = "No está encendido";
         }
         return "Núm.Serie: "+ this.numSerie+" "+corrienteString+", " + encendidoString;
+    }
+    
+    @Override
+    public void darEnergia(){
+        this.tieneCorrienteElectrica = true;
+    }
+    
+    @Override
+    public void quitarEnergia(){
+        this.tieneCorrienteElectrica = false;
     }
     
     
