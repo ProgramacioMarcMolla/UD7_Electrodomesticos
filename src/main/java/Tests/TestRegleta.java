@@ -29,13 +29,9 @@ public class TestRegleta {
         Regleta regleta = new Regleta();
         
         regleta.enchufar(lavadora);
-        System.out.println("[Lavadora] Aparato enchufado");
         regleta.enchufar(television);
-        System.out.println("[Televisión] Aparato enchufado");
         regleta.enchufar(computador);
-        System.out.println("[Lavadora] Aparato enchufado");
         regleta.enchufar(movil);
-        System.out.println("[Televisión] Aparato enchufado");
         
         System.out.println("\n---------Listar aparatos enchufados---------- \n");
         
@@ -45,9 +41,7 @@ public class TestRegleta {
         System.out.println("\n----------Desconectar lavadora y televisión---------- \n");
         
         regleta.desenchufar(lavadora);
-        System.out.println("[Lavadora] Aparato desenchufado");
         regleta.desenchufar(television);
-        System.out.println("[Televisión] Aparato desenchufado");
         
         System.out.println("\n----------Listar aparatos enchufados ---------- \n");
         
@@ -55,10 +49,17 @@ public class TestRegleta {
         
         System.out.println("\n----------Crear móvil con número de serie 1234G ----------\n");
         
-        Movil movil2 = new Movil("1234G", "Samsung", "Galaxy S21", Movil.Memoria.MB256);
+        Movil movil2 = new Movil("1234G", "Motorola", "S500", Movil.Memoria.MB256);
         System.out.println(movil2);
         
         System.out.println("\n----------Enchufar móvil anterior y obtener mensaje de error ---------- \n");
+        
+        regleta.enchufar(movil2);
+        
+        System.out.println("\n---------Desconectar aparato no enchufado (la lavadora)---------- \n");
+        
+        regleta.desenchufar(lavadora);
+        
         
     }
     

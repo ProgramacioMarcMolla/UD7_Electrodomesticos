@@ -14,6 +14,7 @@ public class Movil extends Dispositivo {
     private String marca;
     private String modelo;
     private Memoria memoriaRAM;
+    private final String TIPO_APARATO = "Móvil";
 
     public Movil(String numSerie, String marca, String modelo, Memoria ram) {
         super(numSerie);
@@ -23,8 +24,13 @@ public class Movil extends Dispositivo {
     }
     
     @Override
+    public String getTipo(){
+        return TIPO_APARATO;
+    }
+    
+    @Override
     public String toString(){
-        return "[Móvil] "+super.toString()+", Memoria" + this.memoriaRAM.toString()+  ", Marca: "+ this.marca+", Modelo:"+this.modelo;
+        return "["+TIPO_APARATO+"] "+super.toString()+", Memoria" + this.memoriaRAM.toString()+  ", Marca: "+ this.marca+", Modelo:"+this.modelo;
     }
     
     @Override

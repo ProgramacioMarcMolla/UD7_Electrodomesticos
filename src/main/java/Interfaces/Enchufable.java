@@ -13,4 +13,6 @@ public interface Enchufable {
     public void darEnergia();
 
     public void quitarEnergia();
+    
+    public String getTipo();
 }

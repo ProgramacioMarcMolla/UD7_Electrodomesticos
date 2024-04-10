@@ -14,6 +14,7 @@ import AparatosElectricos.Electrodomestico.ConsumoEnergetico;
 public class Lavadora extends Electrodomestico{
     private double carga;
     private final double CARGA_DEFAULT = 7;
+    private final String TIPO_APARATO = "Lavadora";
     
     public Lavadora(String numSerie,  String marca, String modelo, Color color, ConsumoEnergetico consumoEnerg,float precioBase, int peso,  float carga){
         super(numSerie,  precioBase,  marca,  modelo, color,  consumoEnerg,  peso);
@@ -26,6 +27,11 @@ public class Lavadora extends Electrodomestico{
     }
     
     @Override
+    public String getTipo(){
+        return TIPO_APARATO;
+    }
+    
+    @Override
     public double obtenerPrecioVenta(){
         if(this.carga > 10){
             return super.obtenerPrecioVenta() + 50;
@@ -35,7 +41,7 @@ public class Lavadora extends Electrodomestico{
     
     @Override
     public String toString(){
-        return "[Lavadora] "+ super.toString() + ", Precio Final:"+ this.obtenerPrecioVenta()+", Carga: " + this.carga;
+        return "["+TIPO_APARATO+"] "+ super.toString() + ", Precio Final:"+ this.obtenerPrecioVenta()+", Carga: " + this.carga;
     }
     
     @Override

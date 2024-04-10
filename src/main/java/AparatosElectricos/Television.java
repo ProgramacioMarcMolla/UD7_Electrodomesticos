@@ -14,6 +14,8 @@ public class Television extends Electrodomestico {
     private final int RESOLUCION_DEFAULT = 20;
     private boolean wifiHabilitado;
     private boolean estaConectadoInternet;
+    
+    private final String TIPO_APARATO = "Televisión"; 
 
     public Television(String numSerie, String marca, String modelo) {
         super(numSerie,marca,modelo);
@@ -27,6 +29,11 @@ public class Television extends Electrodomestico {
         this.wifiHabilitado = wifiHabilitado;
         this.estaConectadoInternet = estaConectadoInternet;
         this.resolucion = resolucion;
+    }
+    
+    @Override
+    public String getTipo(){
+        return TIPO_APARATO;
     }
     
     @Override
@@ -49,7 +56,7 @@ public class Television extends Electrodomestico {
             conectadoInternetString = "Conectado a Internet";
         }
         
-        return "[Televisión] "+ super.toString()+", Precio Final: " + this.obtenerPrecioVenta()+", "+wifiString+", "+estaConectadoInternet+", Resolución: "+this.resolucion;
+        return "["+TIPO_APARATO+"] "+ super.toString()+", Precio Final: " + this.obtenerPrecioVenta()+", "+wifiString+", "+estaConectadoInternet+", Resolución: "+this.resolucion;
     }
     
     @Override

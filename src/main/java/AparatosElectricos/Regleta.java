@@ -29,10 +29,11 @@ public class Regleta{
             if(listaAparatos[i] == null){
                 listaAparatos[i] = aparato;
                 aparato.darEnergia();
+                System.out.println("["+aparato.getTipo()+"] Aparato enchufado");
                 return true;
             }
         }
-        
+        System.out.println("["+aparato.getTipo()+"] No hay sitios disponible");
         return false;
     }
     
@@ -42,6 +43,7 @@ public class Regleta{
                 continue;
             }
             if(this.listaAparatos[i].equals(aparato)){
+                System.out.println("["+aparato.getTipo()+"] El aparato ya está enchufado a la regleta");
                 return true;
             }
         }
@@ -59,10 +61,13 @@ public class Regleta{
             if(listaAparatos[i].equals(aparato)){
                 listaAparatos[i] = null;
                 aparato.quitarEnergia();
+                System.out.println("["+aparato.getTipo()+"] Aparato desenchufado");
                 return true;
             }
         }
-         return false;
+        
+        System.out.println("["+aparato.getTipo()+"] El aparato no está enchufado a la regleta ");
+        return false;
     }
     
     private int obtenerTomasLibres(){
