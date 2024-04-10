@@ -27,6 +27,21 @@ public class Movil extends Dispositivo {
         return "[Móvil] "+super.toString()+", Memoria" + this.memoriaRAM.toString()+  ", Marca: "+ this.marca+", Modelo:"+this.modelo;
     }
     
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        
+        Movil otroMovil = (Movil) o;
+        
+        return this.numSerie == otroMovil.numSerie;
+    }
+    
     public enum Memoria {
         MB64("64gb"),
         MB128("128gb"),

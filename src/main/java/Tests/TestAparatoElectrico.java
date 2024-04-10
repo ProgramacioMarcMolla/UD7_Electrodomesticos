@@ -2,7 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package AparatosElectricos;
+package Tests;
+
+import AparatosElectricos.AparatoElectrico;
+import AparatosElectricos.Computador;
+import AparatosElectricos.Electrodomestico;
+import AparatosElectricos.Lavadora;
+import AparatosElectricos.Movil;
+import AparatosElectricos.Television;
 
 /**
  *
@@ -24,6 +31,7 @@ public class TestAparatoElectrico {
         listado[7] = new Movil("1234H", "Iphone", "21", Movil.Memoria.MB512);
         
         verListado(listado);
+        
         
     }
 

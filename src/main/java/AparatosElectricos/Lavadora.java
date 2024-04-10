@@ -38,4 +38,19 @@ public class Lavadora extends Electrodomestico{
         return "[Lavadora] "+ super.toString() + ", Precio Final:"+ this.obtenerPrecioVenta()+", Carga: " + this.carga;
     }
     
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        
+        Lavadora otraLavadora = (Lavadora) o;
+        
+        return numSerie == otraLavadora.numSerie;
+    }
+    
 }

@@ -25,4 +25,19 @@ public class Computador extends Dispositivo {
     public String toString(){
         return "[Computador] "+super.toString()+", RAM: "+this.memoriaRamDisponible+", Velocidad CPU: " + this.velocidadCPU+", Tamaño HD"+ this.tamanoDisco;
     }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        
+        Computador otroComputador = (Computador) o;
+        
+        return this.numSerie == otroComputador.numSerie;
+    }
 }

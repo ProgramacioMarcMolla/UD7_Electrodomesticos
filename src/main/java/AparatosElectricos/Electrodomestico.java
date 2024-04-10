@@ -55,11 +55,11 @@ public abstract class Electrodomestico extends AparatoElectrico {
         return super.toString()+", Marca: "+this.marca+", Modelo:'"+this.modelo+"', Tipo Consumo: "+ this.consumoEnerg +", Color: " + this.color+", Peso: "+this.peso+ ", Precio Base: "+this.precioBase;
     }
 
-    protected enum Color {
+    public enum Color {
         BLANCO, NEGRO, ROJO, AZUL, GRIS
     }
 
-    protected enum ConsumoEnergetico {
+    public enum ConsumoEnergetico {
         A, B, C, D, E, F
     }
     

@@ -52,6 +52,21 @@ public class Television extends Electrodomestico {
         return "[Televisión] "+ super.toString()+", Precio Final: " + this.obtenerPrecioVenta()+", "+wifiString+", "+estaConectadoInternet+", Resolución: "+this.resolucion;
     }
     
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        
+        Television otraTelevision = (Television) o;
+        
+        return numSerie == otraTelevision.numSerie;
+    }
+    
     
     
     
