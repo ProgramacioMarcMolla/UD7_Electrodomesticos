@@ -56,7 +56,24 @@ public class Lavadora extends Electrodomestico{
         
         Lavadora otraLavadora = (Lavadora) o;
         
-        return numSerie == otraLavadora.numSerie;
+        return numSerie.equals(otraLavadora.numSerie);
+    }
+
+    @Override
+    public void activar(){
+        if(this.tieneCorrienteElectrica){
+            System.out.println("["+TIPO_APARATO+"] "+" Aparato encendido ");
+            this.estaEncendida = true;
+            return;
+        }
+        System.out.println("["+TIPO_APARATO+"] "+" No se puede encender (no hay corriente)");
+        this.estaEncendida = false;
+    }
+    
+    @Override
+    public void desactivar(){
+        System.out.println("["+TIPO_APARATO+"] "+" Aparato no está encendido ");
+        this.estaEncendida = false;
     }
     
 }

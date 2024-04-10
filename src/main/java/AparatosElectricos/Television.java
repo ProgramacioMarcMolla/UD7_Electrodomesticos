@@ -4,11 +4,13 @@
  */
 package AparatosElectricos;
 
+import Interfaces.Conectable;
+
 /**
  *
  * @author mark
  */
-public class Television extends Electrodomestico {
+public class Television extends Electrodomestico implements Conectable{
     
     private int resolucion;
     private final int RESOLUCION_DEFAULT = 20;
@@ -71,8 +73,41 @@ public class Television extends Electrodomestico {
         
         Television otraTelevision = (Television) o;
         
-        return numSerie == otraTelevision.numSerie;
+        return numSerie.equals(otraTelevision.numSerie);
     }
+    
+    @Override
+    public void activar(){
+        if(this.tieneCorrienteElectrica){
+            System.out.println("["+TIPO_APARATO+"] "+" Aparato encendido ");
+            this.estaEncendida = true;
+            return;
+        }
+        System.out.println("["+TIPO_APARATO+"] "+" No se puede encender (no hay corriente)");
+        this.estaEncendida = false;
+    }
+    
+    @Override
+    public void desactivar(){
+        System.out.println("["+TIPO_APARATO+"] "+" Aparato no está encendido ");
+        this.estaEncendida = false;
+    }
+
+    @Override
+    public boolean sePermiteConexion() {
+        return this.tieneCorrienteElectrica&&this.estaEncendida&&this.wifiHabilitado;
+    }
+
+    @Override
+    public void establecerConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void quitarConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
     
     
     

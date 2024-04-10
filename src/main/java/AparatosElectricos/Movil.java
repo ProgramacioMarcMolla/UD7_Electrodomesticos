@@ -45,7 +45,19 @@ public class Movil extends Dispositivo {
         
         Movil otroMovil = (Movil) o;
         
-        return this.numSerie == otroMovil.numSerie;
+        return this.numSerie.equals(otroMovil.numSerie);
+    }
+    
+    @Override
+    public void activar(){
+        System.out.println("["+TIPO_APARATO+"] "+" Aparato encendido ");
+        this.estaEncendida = true;
+    }
+    
+    @Override
+    public void desactivar(){
+        System.out.println("["+TIPO_APARATO+"] "+" Aparato no está encendido ");
+        this.estaEncendida = false;
     }
     
     public enum Memoria {

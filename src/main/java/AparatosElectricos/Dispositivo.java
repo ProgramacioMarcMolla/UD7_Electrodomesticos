@@ -4,11 +4,13 @@
  */
 package AparatosElectricos;
 
+import Interfaces.Conectable;
+
 /**
  *
  * @author mark
  */
-public abstract class Dispositivo extends AparatoElectrico{
+public abstract class Dispositivo extends AparatoElectrico implements Conectable{
     protected boolean estaConectadoInternet;
     
     public Dispositivo(String numSerie){
@@ -24,5 +26,22 @@ public abstract class Dispositivo extends AparatoElectrico{
         }
         return super.toString()+", " + conectadoInternetString;
     }
+
+    @Override
+    public boolean sePermiteConexion() {
+        return this.tieneCorrienteElectrica&&this.estaEncendida;
+    }
+
+    @Override
+    public void establecerConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void quitarConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    
     
 }

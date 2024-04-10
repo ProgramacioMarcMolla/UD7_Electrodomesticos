@@ -44,6 +44,18 @@ public class Computador extends Dispositivo {
         
         Computador otroComputador = (Computador) o;
         
-        return this.numSerie == otroComputador.numSerie;
+        return this.numSerie.equals(otroComputador.numSerie);
+    }
+    
+    @Override
+    public void activar(){
+        System.out.println("["+TIPO_APARATO+"] "+" Aparato encendido ");
+        this.estaEncendida = true;
+    }
+    
+    @Override
+    public void desactivar(){
+        System.out.println("["+TIPO_APARATO+"] "+" Aparato no está encendido ");
+        this.estaEncendida = false;
     }
 }

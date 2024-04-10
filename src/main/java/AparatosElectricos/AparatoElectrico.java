@@ -4,13 +4,13 @@
  */
 package AparatosElectricos;
 
-import Interfaces.Enchufable;
+import Interfaces.Encendible;
 
 /**
  *
  * @author mark
  */
-public abstract class AparatoElectrico implements Enchufable{
+public abstract class AparatoElectrico implements Encendible{
     
     protected String numSerie;
     protected boolean estaEncendida;
