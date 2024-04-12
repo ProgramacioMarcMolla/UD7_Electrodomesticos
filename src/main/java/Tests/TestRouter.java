@@ -63,6 +63,7 @@ public class TestRouter {
         
         television.habilitarWifi();
         router.emparejar(television);
+        router.emparejar(television);
         
         System.out.println("");
         router.listarConectados();

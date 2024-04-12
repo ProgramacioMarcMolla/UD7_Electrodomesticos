@@ -38,6 +38,10 @@ public class Router extends AparatoElectrico {
             return false;
         }
         
+        if(comprobarAparatoEnLista(aparato)){
+            return false;
+        }
+        
         for (int i = 0; i < conexiones.length; i++) {
             if (conexiones[i] == null) {
 
@@ -51,6 +55,19 @@ public class Router extends AparatoElectrico {
 
             }
 
+        }
+        return false;
+    }
+    
+    private boolean comprobarAparatoEnLista(Conectable aparato){
+        for(int i = 0; i<this.conexiones.length; i++){
+            if(this.conexiones[i] == null){
+                continue;
+            }
+            if(this.conexiones[i].equals(aparato)){
+                System.out.println("["+aparato.getTipo()+"] El aparato ya está concectado");
+                return true;
+            }
         }
         return false;
     }
