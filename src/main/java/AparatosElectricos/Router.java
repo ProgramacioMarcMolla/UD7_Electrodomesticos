@@ -15,6 +15,11 @@ public class Router extends AparatoElectrico {
     private final String TIPO_APARATO = "Router";
     private Conectable[] conexiones;
     private final int TAMANO_ROUTER = 5;
+    
+    private static final String VERDE = "\u001B[32m";
+    private static final String ROJO = "\u001B[31m";
+    private static final String RESET = "\u001B[0m";
+
 
     public Router(String numSerie) {
         super(numSerie);
@@ -27,6 +32,12 @@ public class Router extends AparatoElectrico {
     }
 
     public boolean emparejar(Conectable aparato) {
+        
+        if(!(isDisponible())){
+            System.out.println(ROJO+"El router no está disponible (sin corriente o no encendido)"+RESET);
+            return false;
+        }
+        
         for (int i = 0; i < conexiones.length; i++) {
             if (conexiones[i] == null) {
 
@@ -42,17 +53,6 @@ public class Router extends AparatoElectrico {
 
         }
         return false;
-    }
-
-    private void emparejarSilencioso(Conectable aparato) {
-        for (int i = 0; i < conexiones.length; i++) {
-            if (conexiones[i] == null && aparato.sePermiteConexion()) {
-
-                conexiones[i] = aparato;
-
-            }
-
-        }
     }
 
     public boolean desemparejar(Conectable aparato) {
@@ -90,7 +90,7 @@ public class Router extends AparatoElectrico {
             }
         }
 
-        System.out.println("\nSe han conectado" + obtenerNumeroDeDispositivosEmparejados() + "/" + this.conexiones.length);
+        System.out.println("\nSe han conectado " + obtenerNumeroDeDispositivosEmparejados() + "/" + this.conexiones.length + "aparatos");
     }
 
     private void actualizarDispositivosEmparejados() {
@@ -105,5 +105,28 @@ public class Router extends AparatoElectrico {
         }
          
     }
+    
+    private boolean isDisponible() {
+        return this.estaEncendida && this.tieneCorrienteElectrica;
+    }
+    
+    @Override
+    public void activar(){
+        if(this.tieneCorrienteElectrica){
+            System.out.println(VERDE+"["+TIPO_APARATO+"] "+" Aparato encendido "+RESET);
+            this.estaEncendida = true;
+            return;
+        }
+        System.out.println(ROJO+"["+TIPO_APARATO+"] "+" No se puede encender (no hay corriente)"+RESET);
+        this.estaEncendida = false;
+    }
+    
+    @Override
+    public void desactivar(){
+        System.out.println(ROJO+"["+TIPO_APARATO+"] "+" Aparato no está encendido "+RESET);
+        this.estaEncendida = false;
+    }
+    
+    
 
 }
