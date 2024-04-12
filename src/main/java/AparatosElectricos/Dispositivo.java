@@ -29,7 +29,7 @@ public abstract class Dispositivo extends AparatoElectrico implements Conectable
 
     @Override
     public boolean sePermiteConexion() {
-        return this.tieneCorrienteElectrica&&this.estaEncendida;
+        return this.estaEncendida;
     }
 
     @Override
