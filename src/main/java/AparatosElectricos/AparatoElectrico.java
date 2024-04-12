@@ -46,6 +46,18 @@ public abstract class AparatoElectrico implements Encendible{
         this.tieneCorrienteElectrica = false;
     }
     
+    @Override
+    public void activar(){
+        System.out.println("Aparato encendido ");
+        this.estaEncendida = true;
+    }
+    
+    @Override
+    public void desactivar(){
+        System.out.println("Aparato no está encendido ");
+        this.estaEncendida = false;
+    }
+    
     
     
     

@@ -33,6 +33,14 @@ public class Television extends Electrodomestico implements Conectable{
         this.resolucion = resolucion;
     }
     
+    public void habilitarWifi(){
+        this.wifiHabilitado = true;
+    }
+    
+    public void deshabilitarWifi(){
+        this.wifiHabilitado = false;
+    }
+    
     @Override
     public String getTipo(){
         return TIPO_APARATO;
@@ -100,12 +108,12 @@ public class Television extends Electrodomestico implements Conectable{
 
     @Override
     public void establecerConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("["+TIPO_APARATO+"] Aparato emparejado con éxito ");
     }
 
     @Override
     public void quitarConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("["+TIPO_APARATO+"]  Aparato desemparejado");
     }
     
     

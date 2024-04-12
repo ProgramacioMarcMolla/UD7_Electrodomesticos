@@ -60,6 +60,16 @@ public class Movil extends Dispositivo {
         this.estaEncendida = false;
     }
     
+    @Override
+    public void establecerConexion() {
+        System.out.println("["+TIPO_APARATO+"] Aparato emparejado con éxito ");
+    }
+
+    @Override
+    public void quitarConexion() {
+        System.out.println("["+TIPO_APARATO+"]  Aparato desemparejado con éxito ");
+    }
+    
     public enum Memoria {
         MB64("64gb"),
         MB128("128gb"),

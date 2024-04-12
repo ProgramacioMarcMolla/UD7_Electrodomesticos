@@ -34,12 +34,12 @@ public abstract class Dispositivo extends AparatoElectrico implements Conectable
 
     @Override
     public void establecerConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Aparato emparejado con éxito ");
     }
 
     @Override
     public void quitarConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Aparato desemparejado con éxito ");
     }
     
     

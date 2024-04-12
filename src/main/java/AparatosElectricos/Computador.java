@@ -58,4 +58,14 @@ public class Computador extends Dispositivo {
         System.out.println("["+TIPO_APARATO+"] "+" Aparato no está encendido ");
         this.estaEncendida = false;
     }
+    
+    @Override
+    public void establecerConexion() {
+        System.out.println("["+TIPO_APARATO+"] Aparato emparejado con éxito ");
+    }
+
+    @Override
+    public void quitarConexion() {
+        System.out.println("["+TIPO_APARATO+"]  Aparato desemparejado con éxito ");
+    }
 }
