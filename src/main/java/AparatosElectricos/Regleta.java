@@ -61,7 +61,12 @@ public class Regleta{
             if(listaAparatos[i].equals(aparato)){
                 listaAparatos[i] = null;
                 aparato.quitarEnergia();
-                System.out.println("["+aparato.getTipo()+"] Aparato desenchufado");
+                if(aparato.getTipo().equals("Router")){
+                    System.out.println("\u001B[32m"+"["+aparato.getTipo()+"] Aparato desenchufado"+"\u001B[0m");
+                }else{
+                    System.out.println("["+aparato.getTipo()+"] Aparato desenchufado");
+                }
+                
                 return true;
             }
         }

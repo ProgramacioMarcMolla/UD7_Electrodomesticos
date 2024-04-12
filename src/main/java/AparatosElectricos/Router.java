@@ -34,7 +34,7 @@ public class Router extends AparatoElectrico {
     public boolean emparejar(Conectable aparato) {
         
         if(!(isDisponible())){
-            System.out.println(ROJO+"El router no está disponible (sin corriente o no encendido)"+RESET);
+            System.out.println(ROJO+"El router no está disponible (sin corriente o no encendido)");
             return false;
         }
         
