@@ -108,11 +108,13 @@ public class Television extends Electrodomestico implements Conectable{
 
     @Override
     public void establecerConexion() {
+        this.estaConectadoInternet = true;
         System.out.println("["+TIPO_APARATO+"] Aparato emparejado con éxito ");
     }
 
     @Override
     public void quitarConexion() {
+        this.estaConectadoInternet = false;
         System.out.println("["+TIPO_APARATO+"]  Aparato desemparejado");
     }
     

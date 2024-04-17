@@ -15,11 +15,10 @@ public class Router extends AparatoElectrico {
     private final String TIPO_APARATO = "Router";
     private Conectable[] conexiones;
     private final int TAMANO_ROUTER = 5;
-    
+
     private static final String VERDE = "\u001B[32m";
     private static final String ROJO = "\u001B[31m";
     private static final String RESET = "\u001B[0m";
-
 
     public Router(String numSerie) {
         super(numSerie);
@@ -32,40 +31,34 @@ public class Router extends AparatoElectrico {
     }
 
     public boolean emparejar(Conectable aparato) {
-        
-        if(!(isDisponible())){
-            System.out.println(ROJO+"El router no está disponible (sin corriente o no encendido)");
+
+        if (!(isDisponible())) {
+            System.out.println(ROJO + "El router no está disponible (sin corriente o no encendido)");
             return false;
         }
-        
-        if(comprobarAparatoEnLista(aparato)){
+
+        if (comprobarAparatoEnLista(aparato)) {
             return false;
         }
-        
+
         for (int i = 0; i < conexiones.length; i++) {
-            if (conexiones[i] == null) {
-
-                if (aparato.sePermiteConexion()) {
-                    conexiones[i] = aparato;
-                    aparato.establecerConexion();
-                    return true;
-                } else {
-                    return false;
-                }
-
+            if (conexiones[i] == null && aparato.sePermiteConexion()) {
+                conexiones[i] = aparato;
+                aparato.establecerConexion();
+                return true;
             }
 
         }
         return false;
     }
-    
-    private boolean comprobarAparatoEnLista(Conectable aparato){
-        for(int i = 0; i<this.conexiones.length; i++){
-            if(this.conexiones[i] == null){
+
+    private boolean comprobarAparatoEnLista(Conectable aparato) {
+        for (int i = 0; i < this.conexiones.length; i++) {
+            if (this.conexiones[i] == null) {
                 continue;
             }
-            if(this.conexiones[i].equals(aparato)){
-                System.out.println("["+aparato.getTipo()+"] El aparato ya está concectado");
+            if (this.conexiones[i].equals(aparato)) {
+                System.out.println("[" + aparato.getTipo() + "] El aparato ya está concectado");
                 return true;
             }
         }
@@ -112,38 +105,36 @@ public class Router extends AparatoElectrico {
 
     private void actualizarDispositivosEmparejados() {
 
-        for(int i = 0; i<conexiones.length; i++){
-            if(conexiones[i] == null){
+        for (int i = 0; i < conexiones.length; i++) {
+            if (conexiones[i] == null) {
                 continue;
             }
-            if(!(conexiones[i].sePermiteConexion())){
+            if (!(conexiones[i].sePermiteConexion())) {
                 conexiones[i] = null;
-            }  
+            }
         }
-         
+
     }
-    
+
     private boolean isDisponible() {
         return this.estaEncendida && this.tieneCorrienteElectrica;
     }
-    
+
     @Override
-    public void activar(){
-        if(this.tieneCorrienteElectrica){
-            System.out.println(VERDE+"["+TIPO_APARATO+"] "+" Aparato encendido "+RESET);
+    public void activar() {
+        if (this.tieneCorrienteElectrica) {
+            System.out.println(VERDE + "[" + TIPO_APARATO + "] " + " Aparato encendido " + RESET);
             this.estaEncendida = true;
             return;
         }
-        System.out.println(ROJO+"["+TIPO_APARATO+"] "+" No se puede encender (no hay corriente)"+RESET);
+        System.out.println(ROJO + "[" + TIPO_APARATO + "] " + " No se puede encender (no hay corriente)" + RESET);
         this.estaEncendida = false;
     }
-    
+
     @Override
-    public void desactivar(){
-        System.out.println(ROJO+"["+TIPO_APARATO+"] "+" Aparato no está encendido "+RESET);
+    public void desactivar() {
+        System.out.println(ROJO + "[" + TIPO_APARATO + "] " + " Aparato no está encendido " + RESET);
         this.estaEncendida = false;
     }
-    
-    
 
 }

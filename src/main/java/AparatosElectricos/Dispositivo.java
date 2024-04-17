@@ -34,11 +34,13 @@ public abstract class Dispositivo extends AparatoElectrico implements Conectable
 
     @Override
     public void establecerConexion() {
+        this.estaConectadoInternet = true;
         System.out.println("Aparato emparejado con éxito ");
     }
 
     @Override
     public void quitarConexion() {
+        this.estaConectadoInternet = false;
         System.out.println("Aparato desemparejado con éxito ");
     }
     
